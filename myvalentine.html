@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  text-align: center;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 35px;
+  border-radius: 25px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 14px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #e91e63;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 25px;
+}
+
+button:hover {
+  background: #c2185b;
+  transform: scale(1.05);
+}
+
+/* POPUP STYLE */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 350px;
+  width: 90%;
+  text-align: center;
+  transform: scale(0.8);
+  transition: 0.3s;
+}
+
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup.show .popup-content {
+  transform: scale(1);
+}
+
+.close-btn {
+  margin-top: 15px;
+  background: #e91e63;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Hey Beautiful ❤️</h1>
+  <p>I have something for you...</p>
+  <button onclick="openPopup()">Click Me 💌</button>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h2>Happy Valentine's Day 💖</h2>
+    <p>
+        Hi babyy,
+        I don’t always say things perfectly,
+        but I’m really thankful for having you.
+        You know na I love you naman, and
+        I’m glad we’re doing this together, hihi.
+        HAPPY VALENTINE'S DAY!!
+    </p>
+    <button class="close-btn" onclick="closePopup()">Close 💕</button>
+  </div>
+</div>
+
+<script>
+function openPopup() {
+  document.getElementById("popup").classList.add("show");
+}
+
+function closePopup() {
+  document.getElementById("popup").classList.remove("show");
+}
+</script>
+
+</body>
+</html>
